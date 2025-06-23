@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:38:50 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/11 13:44:51 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/23 19:51:30 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,9 @@
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
+}
+
+#include <stdio.h>
+int main(){
+	char s[]= "asdfghj";
 }

@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 15:59:22 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/15 16:53:43 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/23 15:42:01 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,22 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-    if (n == -2147483648)
-    {
-        ft_putchar_fd('-', fd);
-        ft_putchar_fd('2', fd);
-        ft_putchar_fd('1', fd);
-        ft_putchar_fd('4', fd);
-        ft_putchar_fd('7', fd);
-        ft_putchar_fd('4', fd);
-        ft_putchar_fd('8', fd);
-        ft_putchar_fd('3', fd);
-        ft_putchar_fd('6', fd);
-        ft_putchar_fd('4', fd);
-        ft_putchar_fd('8', fd);
-        return;
-    }
-    if (n < 0)
-    {
-        ft_putchar_fd('-', fd);
-        n = -n;
-    }
-    if (n >= 9)
-        ft_putnbr_fd(n / 10, fd);
-    ft_putchar_fd((n % 10) + '0', fd);
-}
+    long nb;
 
+    nb = n;
+    if (nb < 0)
+    {
+        ft_putchar_fd('-', fd);
+        nb = -nb;
+    }
+    if (nb >= 9)
+        ft_putnbr_fd(nb / 10, fd);
+    ft_putchar_fd((nb % 10) + '0', fd);
+}
+#include <fcntl.h>
 int main(){
-    ft_putnbr_fd(-2147483648, 1);
+    int fd;
+    fd = open("ddeneme3.txt", O_RDWR | O_APPEND | O_CREAT, 0644);
+    ft_putnbr_fd(-2147483648, fd);
+    close(fd);
 }

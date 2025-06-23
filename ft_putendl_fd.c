@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 15:53:17 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/15 15:58:41 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/23 15:36:37 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ void ft_putendl_fd(char *s, int fd)
     write(fd, "\n", 1);
 }
 
+#include <fcntl.h>
 int main(){
-    ft_putendl_fd("asdfghj0", 0);
-    ft_putendl_fd("asdfghj1", 1);
-    ft_putendl_fd("asdfghj2", 2);
-    ft_putendl_fd("asdfghj3", 3);
+    int fd;
+    fd=open("deneme2.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
+    if(fd == -1)
+        return (1);
+    ft_putendl_fd("KGLG", fd);
+    close(fd);
 }

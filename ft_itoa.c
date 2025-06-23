@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 10:36:07 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/15 14:12:25 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/17 17:34:28 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,28 @@ static void reverse(char *s)
 
 char *ft_itoa(int n)
 {
+    long nb;
     int i;
     int sign;
     char *str;
     
+    nb = n;
     i = 0;
-    sign = (n < 0) ? -1 : 1;
+    sign = (nb < 0) ? -1 : 1;
     str = (char *)malloc(12);
     if (!str)
         return (NULL);
-    if (n == 0)
+    if (nb == 0)
         str[i++] = '0';
     else
     {
         if (sign == -1)
-            n = -n;
+            nb = -nb;
     }
-    while (n > 0)
+    while (nb > 0)
     {
-        str[i++] = (n % 10) + '0';
-        n /= 10;
+        str[i++] = (nb % 10) + '0';
+        nb /= 10;
     }
     if (sign == -1)
         str[i++] = '-';
@@ -62,12 +64,10 @@ char *ft_itoa(int n)
     return (str);
 }
 
-// -2147483648 gibi bir değere karşı koruma yok
-
 #include <stdio.h>
 int main()
 {
-    char *s= ft_itoa(-10);
+    char *s= ft_itoa(-2147483648);
     printf("%s", s);
     free(s);
 }
