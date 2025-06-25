@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:06:31 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/02 13:06:13 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:11:22 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,4 @@ int ft_isascii(int c)
     if (c >= 0 && c <= 127)
         return (1);
     return (0);
-}
-
-#include <stdio.h>
-int main(){
-    int a= 124;
-    printf("%d", ft_isascii(a));
 }

@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 09:54:50 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/15 10:35:17 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 15:33:19 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,4 @@ char **ft_split(char const *s, char c)
     }
     result[j] = NULL;
     return (result);
-}
-
-#include <stdio.h>
-int main()
-{
-    char **s=ft_split("aad, f,gfh,,,  ,", ',');
-    int i= 0;
-    while(s[i])
-    {
-        printf("[%s]", s[i]);
-        free(s[i]);
-        i++;
-    }
-    free(s);
 }

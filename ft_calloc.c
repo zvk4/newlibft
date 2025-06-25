@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:39:58 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/23 19:29:36 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/24 14:33:07 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,4 @@ void *ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
-}
-
-#include <stdio.h>
-int main()
-{
-	int *array= ft_calloc('a', 10);
-	int i = 0;
-	while (i < 10)
-	{
-		printf("%d", array[i]);
-		i++;
-	}
-	free(array);
 }

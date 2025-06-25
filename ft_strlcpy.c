@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:50:20 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/01 16:59:58 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 17:56:37 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,4 @@ size_t    ft_strlcpy(char *dst, const char *src, size_t size)
     while(src[i])
         i++;
     return (i);
-}
-
-#include <stdio.h>
-int main()
-{
-    char src[]="asdfg", dst[4];
-    printf("%zu", ft_strlcpy(dst, src, sizeof(dst)));
-    printf("\n%s", dst);
 }

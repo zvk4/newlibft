@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 16:25:41 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/11 13:43:42 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 15:35:33 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,3 @@ char *ft_strdup(const char *s)
     copy[i] = '\0';
     return (copy);
 }
-
-#include <stdio.h>
-int main(){
-    char a[]= "asdfgh";
-    char *b= ft_strdup(a);
-    printf("%s\n", b);
-    free(b);
-} 

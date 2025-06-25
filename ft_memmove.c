@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:36:14 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/04 13:03:20 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 13:40:35 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,4 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
         }
     }
     return (dest);
-}
-#include <stdio.h>
-int main()
-{
-
-    char str[] = "memmove can be very useful     125";
-    char *a=ft_memmove (str+20,str+15,11);
-    printf ("%s", a);
-    
-    /*
-    char src[]="merhaba", dest[4]="dün";
-    char *a=ft_memmove(dest, src, 3);
-    printf("%s", a);
-    */
 }

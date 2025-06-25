@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 12:26:42 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/03 19:03:25 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:36:21 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,4 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
         i++;
     }
     return (dest);
-}
-
-#include <stdio.h>
-int main()
-{
-    char src[]= "asdfgh", dest[7];
-    ft_memcpy(dest, src, 3);
-    printf("%s ", dest);
 }

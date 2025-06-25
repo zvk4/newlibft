@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 15:59:22 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/23 15:42:01 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 15:23:19 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,4 @@ void ft_putnbr_fd(int n, int fd)
     if (nb >= 9)
         ft_putnbr_fd(nb / 10, fd);
     ft_putchar_fd((nb % 10) + '0', fd);
-}
-#include <fcntl.h>
-int main(){
-    int fd;
-    fd = open("ddeneme3.txt", O_RDWR | O_APPEND | O_CREAT, 0644);
-    ft_putnbr_fd(-2147483648, fd);
-    close(fd);
 }

@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:25:11 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/02 13:00:56 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:03:48 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,4 @@ int	ft_isalnum(int c)
     || (c >= 48 && c <= 57))
          return (1);
     return (0);
-}
-
-#include <stdio.h>
-int main(){
-    int a = '.';
-    printf("%d", ft_isalnum(a));
 }

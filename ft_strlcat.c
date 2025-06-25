@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:01:52 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/01 18:31:22 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 17:53:57 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,4 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
     if (dst_len + i < size)
         dst[dst_len + i] = '\0';
     return (dst_len + src_len);
-}
-
-#include <stdio.h>
-int main()
-{
-    char src[]= "dünya", dst[20]= "merhaba ";
-    printf("%zu", ft_strlcat(dst, src, 20));
-    printf("\n%s", dst);
 }

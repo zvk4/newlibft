@@ -6,30 +6,40 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 10:36:07 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/17 17:34:28 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/25 13:20:12 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void reverse(char *s)
+static void reverse_str(char *s, int len)
 {
     int i;
-    int start;
     char temp;
     
     i = 0;
-    while(s[i])
-        i++;
-    start = 0;
-    while (i > start)
+    while(i < len / 2)
     {
-        temp = s[start];
-        s[start] = s[i - 1];
-        s[i - 1] = temp;
-        i--;
-        start++;
+        temp = s[i];
+        s[i] = s[len - 1 - i];
+        s[len - 1 - i] = temp;
+        i++;
     }
+}
+
+static int int_len(long n)
+{
+    int len;
+
+    len = 1;
+    if (n < 0)
+        n = -n;
+    while (n >= 10)
+    {
+        n /= 10;
+        len++;
+    }
+    return (len);
 }
 
 char *ft_itoa(int n)
@@ -40,35 +50,23 @@ char *ft_itoa(int n)
     char *str;
     
     nb = n;
-    i = 0;
-    sign = (nb < 0) ? -1 : 1;
-    str = (char *)malloc(12);
+    sign = (nb < 0);
+    if (nb < 0)
+        nb = -nb;
+    str = (char *)malloc(int_len(nb) + sign + 1);
     if (!str)
         return (NULL);
+    i = 0;
     if (nb == 0)
         str[i++] = '0';
-    else
-    {
-        if (sign == -1)
-            nb = -nb;
-    }
     while (nb > 0)
     {
         str[i++] = (nb % 10) + '0';
         nb /= 10;
     }
-    if (sign == -1)
+    if (sign)
         str[i++] = '-';
-    reverse(str);
+    reverse_str(str, i);
     str[i] = '\0';
     return (str);
 }
-
-#include <stdio.h>
-int main()
-{
-    char *s= ft_itoa(-2147483648);
-    printf("%s", s);
-    free(s);
-}
-

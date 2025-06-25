@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:22:42 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/02 12:38:29 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:13:51 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,4 @@ int	ft_isdigit(int c)
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
-}
-#include <stdio.h>
-int main(){
-	int a='2';
-	printf("%d", ft_isdigit(a));
 }
