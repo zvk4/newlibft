@@ -6,13 +6,13 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:07:19 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/24 17:14:15 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/26 13:58:23 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 126)
-        return (1);
-    return (0);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

@@ -6,20 +6,13 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:57:45 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/01 19:03:17 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/26 15:32:42 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-        return (c + 32);
-    return (c);
-}
-
-#include <stdio.h>
-int main()
-{
-    char a = 'S';
-    printf("%c", ft_tolower(a));
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

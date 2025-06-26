@@ -1,17 +1,20 @@
 #include "libft.h"
 #include <stdio.h>
-
-char fti(unsigned int i, char c)
-{
-    ft_toupper(c);
-    return (c);
-}
-
+#include <string.h>
+#include <fcntl.h>
 int main()
 {
-    char dst[]="merhaba";
-    char *f= ft_strmapi(dst, fti);
-    printf("%s", f);
+    int i = 0;
+    char **a= ft_split("   ", ' ');
+    if (!a)
+        return 1;
+    while (i < 3)
+    {
+        printf("[%s]", a[i]);
+        i++;
+        free(a[i]);
+    }
+    free(a);
 }
 
 // -2147483648

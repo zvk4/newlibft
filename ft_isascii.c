@@ -6,13 +6,13 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:06:31 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/24 17:11:22 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/26 13:56:25 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
