@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:09:36 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/26 15:41:44 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/27 15:28:06 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <stddef.h>
 # include <unistd.h>
 
 int		ft_isalnum(int c);

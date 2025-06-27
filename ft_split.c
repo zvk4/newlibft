@@ -6,7 +6,7 @@
 /*   By: zkarali <zkarali@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 09:54:50 by zkarali           #+#    #+#             */
-/*   Updated: 2025/06/26 19:21:15 by zkarali          ###   ########.fr       */
+/*   Updated: 2025/06/27 12:52:26 by zkarali          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,58 +38,58 @@ static int	word_len(char const *s, char c)
 	return (len);
 }
 
-static void	free_all(char **result, int k)
+static char	*alloc_word(char const *s, char c)
 {
-	int	i;
+	int		len;
+	int		i;
+	char	*word;
 
+	len = word_len(s, c);
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
 	i = 0;
-	while (i < k)
+	while (i < len)
 	{
-		free(result[k]);
+		word[i] = s[i];
 		i++;
 	}
+	word[i] = '\0';
+	return (word);
+}
+
+static void	free_all(char **result, int i)
+{
+	while (i--)
+		free(result[i]);
 	free(result);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int		words;
-	int		len;
 	int		i;
-	int		j;
 
-	words = count_words(s, c);
-	result = malloc(sizeof(char *) * (words + 1));
+	if (!s)
+		return (NULL);
+	result = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (j < words)
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		len = word_len(&s[i], c);
-		result[j] = malloc(sizeof(char) * (len + 1));
-		if (!result[j])
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			free_all(result, j);
-			return (NULL);
+			result[i] = alloc_word(s, c);
+			if (!result[i])
+				return (free_all(result, i), NULL);
+			while (*s && *s != c)
+				s++;
+			i++;
 		}
-		len = 0;
-		while (s[i] && s[i] != c)
-			result[j][len++] = s[i++];
-		result[j][len] = '\0';
-		j++;
 	}
-	result[j] = NULL;
+	result[i] = NULL;
 	return (result);
 }
-
-/*
-char **result = malloc(sizeof(char *));
-if (!result)
-    return (NULL);
-result[0] = NULL;
-return (result);
-*/
